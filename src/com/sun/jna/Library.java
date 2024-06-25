@@ -271,4 +271,8 @@ public interface Library {
             }
         }
     }
+
+    static NativeLibrary getNativeLibrary(final Library library) {
+        return ((Handler)Proxy.getInvocationHandler(library)).getNativeLibrary();
+    }
 }
